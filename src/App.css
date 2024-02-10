@@ -1,0 +1,122 @@
+:root {
+  --blue: #1F509D;
+  --grey: #585659;
+  --pink: #673E92;
+  --yellow: #de9830;
+  --purple: #50358D;
+  --black: #000;
+  --white: #fff;
+}
+
+.button {
+  border: 1px solid var(--yellow);
+  padding: 8px 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background-color: var(--yellow);
+  color: var(--blue);
+}
+
+.heading_font {
+  color: var(--blue);
+}
+
+.input {
+  border: none;
+  outline: none;
+  border: 1px solid var(--blue);
+  box-shadow: 2px 2px 2px var(--grey);
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+::placeholder{
+  color: var(--black) !important;
+}
+
+/* Navbar */
+
+.navbar_header{
+  height: 80px;
+}
+
+.navbar_container {
+  box-shadow: 5px 5px 5px var(--grey);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar_list a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--blue);
+}
+
+.navbar_list li {
+  list-style: none;
+}
+
+.navbar_list a:hover {
+  text-decoration: underline;
+}
+
+.navbar_menuBtn {
+  display: none !important;
+}
+
+.menu_dropdown {
+  margin-top: 80px;
+  background-color: rgb(247, 246, 246);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.menu_dropdown a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--blue);
+}
+
+.menu_dropdown li {
+  list-style: none;
+}
+
+.menu_dropdown a:hover {
+  text-decoration: underline;
+}
+
+.menu_dropdown {
+  display: none;
+}
+
+/* Admission Form */
+
+.admissionForm input::placeholder{
+  color: var(--blue) !important;
+}
+
+/* Responsive Design */
+
+@media (max-width : 768px) {
+  .navbar_navigation {
+    display: none;
+  }
+
+  .navbar_btn {
+    display: none;
+  }
+
+  .navbar_menuBtn {
+    display: block !important;
+  }
+
+  .menu_dropdown {
+    display: block;
+  }
+
+}
