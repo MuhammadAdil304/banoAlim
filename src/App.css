@@ -6,16 +6,10 @@
   --purple: #50358D;
   --black: #000;
   --white: #fff;
+  --light-gary: rgb(247, 246, 246);
 }
 
-.button {
-  border: 1px solid var(--yellow);
-  padding: 8px 10px;
-  text-transform: uppercase;
-  border-radius: 10px;
-  background-color: var(--yellow);
-  color: var(--blue);
-}
+
 
 .heading_font {
   color: var(--blue);
@@ -25,27 +19,39 @@
   border: none;
   outline: none;
   border: 1px solid var(--blue);
-  box-shadow: 2px 2px 2px var(--grey);
+  box-shadow: 0px 2px 2px var(--grey);
   width: 100%;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
 }
 
-::placeholder{
+.select {
+  border: none;
+  outline: none;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid var(--blue);
+  box-shadow: 0px 2px 2px var(--grey);
+  width: 100%;
+  border-radius: 5px;
+}
+
+::placeholder {
   color: var(--black) !important;
 }
 
 /* Navbar */
 
-.navbar_header{
+.navbar_header {
   height: 80px;
 }
 
 .navbar_container {
+  background-color: var(--white);
   box-shadow: 5px 5px 5px var(--grey);
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .navbar_list a {
@@ -68,7 +74,7 @@
 
 .menu_dropdown {
   margin-top: 80px;
-  background-color: rgb(247, 246, 246);
+  background-color: var(--light-gary);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   width: 100%;
@@ -94,10 +100,57 @@
   display: none;
 }
 
+/* Courses */
+
+.courses {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-gary);
+}
+
 /* Admission Form */
 
-.admissionForm input::placeholder{
+.admissionForm {
+  background-color: var(--light-gary);
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* footer */
+
+.footer{
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--light-gary);
+  margin-top: 100px;
+}
+
+.footer li{
+  list-style: none;
+}
+
+.footer li:hover{
+  cursor: pointer;
   color: var(--blue) !important;
+}
+
+.footer a{
+  text-decoration: none;
+  color: black;
+  line-height: 50px;
+}
+
+.footer a:hover{
+  color: var(--blue) !important;
+}
+
+.footer_end{
+  background-color: darkblue;
 }
 
 /* Responsive Design */
