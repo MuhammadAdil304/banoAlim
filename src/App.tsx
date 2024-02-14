@@ -15,7 +15,9 @@ function App() {
   const [btnState, setBtnState] = useState(false)
   const [fillFields, setFillFields] = useState<any>({})
   const [classState, setClassState] = useState(false)
-  const [readMore, setReadMore] = useState(false)
+  const [readMoreOfDarsenizami, setReadMoreOfDarseNizami] = useState(false)
+  const [readMoreOfQuraniArabi, setReadMoreOfQuraniArabi] = useState(false)
+
 
   const fillAdmissionForm = (key: any, val: any) => {
     fillFields[key] = val
@@ -62,7 +64,7 @@ function App() {
       FBAdd('/Students', fillFields)
         .then((res) => {
           console.log(res)
-          window.open('https://wa.me/+923233327576' , '_blank')
+          window.open('https://wa.me/+923233327576', '_blank')
         })
         .catch((err) => {
           console.log(err.message)
@@ -88,7 +90,7 @@ function App() {
             </ul>
           </div>
           <div className='mt-4'>
-            {btnState ? (<IconButton onClick={() => setBtnState(!btnState)} className='navbar_menuBtn'><CloseIcon /></IconButton>) : (<IconButton onClick={() => setBtnState(!btnState)} className='navbar_menuBtn'><ReorderSharpIcon /></IconButton>)}
+            <IconButton onClick={() => setBtnState(!btnState)} className='navbar_menuBtn'>{btnState ? (<CloseIcon />) : (<ReorderSharpIcon />)}</IconButton>
           </div>
         </div>
         {btnState ? (
@@ -115,16 +117,16 @@ function App() {
                   <img src={require("./images/darsenizami.jpeg")} className="card-img-top " alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Dars-E-Nizami</h5>
-                    <p >
-                      The Al-Aziz Islamic Institute has been operating for four years by the grace of Allah, and by His grace, the fifth year will also commence...
-                      {readMore ? (<>
+                    <p className='text-start'>
+                      {readMoreOfDarsenizami ? (<>
                         inshaAllah. Its inception took place after Taraweeh prayers during Ramadan...where children were taught the translation of 10 verses of the Quran, igniting their interest. Subsequently,
                         the first class began, and with Allah's blessings, it has been running smoothly for four years now.
                         This institute follows the Darse Nizami curriculum affiliated with Wifaq-ul-Madaris, and upon completion of the
                         eight-year course, students receive the Alim degree accredited by Wifaq-ul-Madaris. Without further delay, you can click the button below to apply for admission.
-                        <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMore(!readMore)}>Hide</p></>) : (
+                        <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMoreOfDarseNizami(!readMoreOfDarsenizami)}>Hide</p></>) : (
                         <>
-                          <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMore(!readMore)}>Read More</p>
+                          The Al-Aziz Islamic Institute has been operating for four years by the grace of Allah, and by His grace, the fifth year will also ...
+                          <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMoreOfDarseNizami(!readMoreOfDarsenizami)}>Read More</p>
                         </>
                       )}</p>
                     <a href="#admissionForm" className="btn btn-primary">Register Now</a>
@@ -136,8 +138,22 @@ function App() {
                   <img src={require('./images/Quranic Arabic.png')} className="card-img-top" alt="..." />
                   <div className="card-body">
                     <h5 className="card-title">Qurani Arabi</h5>
-                    <p className="card-text">
-                      The Al-Aziz Islamic Institute has recently launched a one-year Quranic Arabic course. In this course, you will be taught complete Arabic, enabling you to understand Arabic texts and recognize nouns and verbs</p>
+                    <p className="text-start">
+                      {readMoreOfQuraniArabi ? (
+                        <>
+                          The Al-Aziz Islamic Institute has recently launched a one-year Quranic Arabic course. In this course, you will be taught complete... Arabic, enabling you to understand Arabic texts and recognize nouns and verbs in Arabic.Without further delay, you can click the button below to apply for admission.
+                          <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMoreOfQuraniArabi(!readMoreOfQuraniArabi)}>Hide</p>
+                        </>
+                      ) : (
+                        <>
+                          The Al-Aziz Islamic Institute has recently launched a one-year Quranic Arabic course. In this course, you will be taught complete...
+                          <p className=' text-primary text-end' style={{ cursor: 'pointer' }} onClick={() => setReadMoreOfQuraniArabi(!readMoreOfQuraniArabi)}>Read More</p>
+                        </>
+                      )
+                      }
+
+
+                    </p>
                     <a href="#admissionForm" className="btn btn-primary">Register Now</a>
                   </div>
                 </div>
@@ -157,23 +173,23 @@ function App() {
               <div className="row">
                 <div className="col-md-4 col-sm-6 col-12">
                   <label className='px-2 py-1 text-secondary'>Your Name*</label>
-                  <input type="name" onChange={(e: any) => fillAdmissionForm('name', e.target.value)} required placeholder='Name' className='input' />
+                  <input type="name" onChange={(e: any) => fillAdmissionForm('name', e.target.value)}  placeholder='Name' className='input' />
                 </div>
                 <div className="col-md-4 col-sm-6 col-12">
                   <label className='px-2 py-1 text-secondary'>Your Number*</label>
-                  <input type="number" onChange={(e: any) => fillAdmissionForm('number', e.target.value)} required placeholder='Contact No' className='input' />
+                  <input type="number" onChange={(e: any) => fillAdmissionForm('number', e.target.value)}  placeholder='Contact No' className='input' />
                 </div>
                 <div className="col-md-4 col-sm-6 col-12">
                   <label className='px-2 py-1 text-secondary'>Your CNIC*</label>
-                  <input type='number' onChange={(e: any) => fillAdmissionForm('cnic', e.target.value)} required placeholder='CNIC' className='input' />
+                  <input type='number' onChange={(e: any) => fillAdmissionForm('cnic', e.target.value)}  placeholder='CNIC' className='input' />
                 </div>
                 <div className="col-md-4 col-sm-6 col-12">
                   <label className='px-2 py-1 text-secondary'>Last Qualification*</label>
-                  <input type="text" onChange={(e: any) => fillAdmissionForm('lastQualification', e.target.value)} required placeholder='Last Qualification' className='input' />
+                  <input type="text" onChange={(e: any) => fillAdmissionForm('lastQualification', e.target.value)}  placeholder='Last Qualification' className='input' />
                 </div>
                 <div className="col-md-4 col-12">
                   <label className='px-2 py-1 text-secondary'>Where do you Job at Time*</label>
-                  <input type="text" onChange={(e: any) => fillAdmissionForm('job', e.target.value)} required placeholder='Where do you Job at Time' className='input' />
+                  <input type="text" onChange={(e: any) => fillAdmissionForm('job', e.target.value)}  placeholder='Where do you Job at Time' className='input' />
                 </div>
                 <div className="col-md-4 col-12">
                   <label className='px-2 py-1 text-secondary'>Which course do you want to study?*</label>
@@ -201,7 +217,7 @@ function App() {
                 ) : ('')}
                 <div className="col-md-8 col-12">
                   <label className='px-2 py-1 text-secondary'>Your Address*</label>
-                  <input type="text" onChange={(e: any) => fillAdmissionForm('address', e.target.value)} required placeholder='Address' className='input' />
+                  <input type="text" onChange={(e: any) => fillAdmissionForm('address', e.target.value)}  placeholder='Address' className='input' />
                 </div>
               </div>
             </div>
@@ -213,27 +229,25 @@ function App() {
       </section>
       {/* footer */}
       <footer>
-        <div className='footer'>
+        <div className='footer py-5'>
           <div className="container">
             <div className="row">
-              <div className="col-md-4 ">
-                <img src={require('./images/banoAlim_footer.png')} alt="" className='mt-5' />
+              <div className="col-md-3 my-1">
+                <img src={require('./images/banoAlim_footer.png')} alt="" width='100%' className='mt-5' />
               </div>
-              <div className="col-md-3">
-                <h3 className='heading_font ms-3 mt-3 '>Quick Links</h3>
-                <ul>
-                  <li><a className='text-secondary ' href="#">Home</a></li>
-                  <li><a className='text-secondary ' href="#ourCourses">Our Courses</a></li>
-                  <li><a className='text-secondary ' href="#admissionForm">Admission Form</a></li>
-                </ul>
+              <div className="col-md-3  my-3 ">
+                <h3 className='heading_font '>Quick Links</h3>
+                <p><a className='text-secondary ' href="#">Home</a></p>
+                <p><a className='text-secondary ' href="#ourCourses">Our Courses</a></p>
+                <p><a className='text-secondary ' href="#admissionForm">Admission Form</a></p>
+
               </div>
-              <div className="col-md-4">
-                <h3 className='heading_font ms-4 mt-3'>Contact Info</h3>
-                <ul>
-                  <li className='d-flex text-secondary'><IconButton><MailOutlineIcon color='primary' /></IconButton>saleemullahmemon88@gmail.com</li>
-                  <li className='d-flex text-secondary'><IconButton><LocalPhoneSharpIcon color='primary' /></IconButton>+92 323 3327576</li>
-                  <li className='d-flex text-secondary'><IconButton><LocationOnSharpIcon color='primary' /></IconButton>AL-AZIZ Islamic Institute 1027/3 Hussainabad FB area Karachi. Karachi, Sindh, Pakistan-74600</li>
-                </ul>
+              <div className="col-md-6 my-3">
+                <h3 className='heading_font '>Contact Info</h3>
+                <p className='text-secondary'><IconButton ><MailOutlineIcon color='primary' className='ico'/></IconButton>saleemullahmemon88@gmail.com</p>
+                <p className='text-secondary'><IconButton ><LocalPhoneSharpIcon color='primary' className='ico' /></IconButton>+92 323 3327576</p>
+                <p className='text-secondary'><IconButton ><LocationOnSharpIcon color='primary' className='ico' /></IconButton>AL-AZIZ Islamic Institute 1027/3 Hussainabad FB area Karachi ,Pakistan.</p>
+
               </div>
             </div>
           </div>

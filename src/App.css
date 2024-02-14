@@ -10,9 +10,17 @@
 }
 
 
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .heading_font {
   color: var(--blue);
+  text-shadow: 2px 2px 5px var(--purple);
+  text-transform: capitalize;
 }
 
 .input {
@@ -66,6 +74,7 @@
 
 .navbar_list a:hover {
   text-decoration: underline;
+  color: var(--purple);
 }
 
 .navbar_menuBtn {
@@ -77,9 +86,12 @@
   background-color: var(--light-gary);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  box-shadow: 0 5px 3px var(--grey);
   width: 100%;
   position: fixed;
   top: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .menu_dropdown a {
@@ -110,6 +122,10 @@
   background-color: var(--light-gary);
 }
 
+.courses p:hover {
+  color: var(--purple);
+}
+
 /* Admission Form */
 
 .admissionForm {
@@ -122,34 +138,31 @@
 
 /* footer */
 
-.footer{
-  height: 70vh;
-  display: flex;
-  align-items: center;
+.footer {
   background-color: var(--light-gary);
   margin-top: 100px;
 }
 
-.footer li{
-  list-style: none;
-}
-
-.footer li:hover{
+.footer p:hover {
   cursor: pointer;
-  color: var(--blue) !important;
+  color: var(--purple) !important;
 }
 
-.footer a{
+.footer a {
   text-decoration: none;
   color: black;
-  line-height: 50px;
+  line-height: 30px;
 }
 
-.footer a:hover{
-  color: var(--blue) !important;
+.footer a:hover {
+  color: var(--purple) !important;
 }
 
-.footer_end{
+.footer .icon:hover {
+  color: var(--purple);
+}
+
+.footer_end {
   background-color: darkblue;
 }
 
